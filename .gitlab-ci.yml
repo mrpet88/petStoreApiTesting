@@ -3,5 +3,4 @@ rspec:
 
 
   script:
-    - mvn install -B
     - mvn clean verify
