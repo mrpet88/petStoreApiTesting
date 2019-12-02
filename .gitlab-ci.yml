@@ -1,3 +1,5 @@
 rspec:
+  before_script:
+    - mvn --version
   script:
     - $MAVEN_HOME/bin/mvn clean verify
