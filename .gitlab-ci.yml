@@ -1,4 +1,3 @@
 rspec:
   script
-    - ~/.bash_profile
     - $MAVEN_HOME/bin/mvn clean verify
