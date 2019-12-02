@@ -3,4 +3,4 @@ rspec:
   
   script:
     - mvn install -B
-    - $MAVEN_HOME/bin/mvn clean verify
+    - mvn clean verify
