@@ -1,5 +1,6 @@
 rspec:
-  before_script:
-  - export MAVEN_HOME=/usr/local/apache-maven
+  image: maven:3-jdk-7
+  
   script:
+    - mvn install -B
     - $MAVEN_HOME/bin/mvn clean verify
