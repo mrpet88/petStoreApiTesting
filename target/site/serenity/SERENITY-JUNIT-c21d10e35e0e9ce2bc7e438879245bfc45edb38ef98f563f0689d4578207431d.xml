@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Create a basic Api test for pet store" skipped="0" tests="4" time="5.23" timestamp="2019-12-02 03:18:50"><testcase name="Post a new pet"/><testcase name="Get a pet"/><testcase name="Update a pet"/><testcase name="Delete a pet"/></testsuite>
