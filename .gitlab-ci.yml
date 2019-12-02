@@ -1,6 +1,7 @@
 rspec:
-  image: maven:3-jdk-7
-  
+  image: maven:3.3.9-jdk-8
+
+
   script:
     - mvn install -B
     - mvn clean verify
