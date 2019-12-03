@@ -16,7 +16,7 @@ public class Application {
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
-            System.out.println(FigletFont.convertOneLine("API PLAYGROUND TEST"));
+            System.out.println(FigletFont.convertOneLine("API PET STORE TEST"));
         };
     }
 }
