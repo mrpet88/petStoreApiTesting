@@ -1,13 +1,13 @@
 # Default ignored files
 /workspace.xml
-target/
-*.class
-*.jar
-*.war
-*.ear
-*.logs
-*.iml
-*.html
-*.csv
-.idea/
-.eclipse
+*target/
+#*.class
+#*.jar
+#*.war
+#*.ear
+#*.logs
+#*.iml
+#*.html
+#*.csv
+#.idea/
+#.eclipse
