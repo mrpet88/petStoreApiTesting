@@ -11,7 +11,6 @@ public class Get {
     @Given("user provides existing pet id")
     public void userProvidePetId() {
         pethelper.buildUrl(false);
-
     }
 
     @When("the user submits get request")
@@ -21,6 +20,6 @@ public class Get {
 
     @Then("the correct pet should appear")
     public void theRightPetShouldAppear() {
-        pethelper.validateGetRequest(false);
+        pethelper.validateRequest();
     }
 }

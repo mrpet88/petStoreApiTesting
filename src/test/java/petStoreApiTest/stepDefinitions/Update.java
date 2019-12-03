@@ -23,6 +23,6 @@ public class Update {
 
     @Then("the pet should be updated succesfully")
     public void thePetShouldBeUpdated() {
-        pethelper.validateGetRequest(true);
+        pethelper.validateRequest();
     }
 }

@@ -1,17 +1,16 @@
 package steps.utils;
 
+import java.util.Random;
+
 public enum petStatus {
-    Available("available"),
-    Pending("pending"),
-    Sold("sold");
+    available,
+    pending,
+    sold;
 
-    private final String status;
+    private static final Random random = new Random();
 
-    petStatus(String status) {
-        this.status = status;
-    }
-
-    public String getStatus() {
-        return status;
+    public static <T extends Enum<?>> T randomStatus(Class<T> clazz){
+        int x = random.nextInt(clazz.getEnumConstants().length);
+        return clazz.getEnumConstants()[x];
     }
 }

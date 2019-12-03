@@ -5,6 +5,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import steps.utils.petStatus;
 
+import static steps.utils.petStatus.randomStatus;
+
 public class CreatePetObject {
     @Steps
     Long id = System.currentTimeMillis();
@@ -30,7 +32,7 @@ public class CreatePetObject {
         tags.put(tag);
         petObject.put("tags", tags);
 
-        petObject.put("status", petStatus.Available.getStatus());
+        petObject.put("status", randomStatus(petStatus.class));
         this.pet = petObject;
     }
 
@@ -38,6 +40,6 @@ public class CreatePetObject {
         pet.remove("name");
         pet.remove("status");
         pet.put("name", "updatedName" + id);
-        pet.put("status", petStatus.Pending.getStatus());
+        pet.put("status", randomStatus(petStatus.class));
     }
 }

@@ -7,7 +7,6 @@ import io.restassured.specification.RequestSpecification;
 import net.thucydides.core.annotations.Steps;
 import org.assertj.core.api.SoftAssertions;
 import org.testng.Assert;
-import steps.utils.petStatus;
 
 import static net.serenitybdd.rest.SerenityRest.given;
 import static steps.CreatePetObject.pet;
@@ -27,15 +26,6 @@ public class petHelper {
         if (isPost) {
             builder.setBody(pet.toString());
         }
-        builder.setContentType("application/json");
-        requestSpec = builder.build();
-    }
-
-    public void buildUpdateUrl() {
-        RequestSpecBuilder builder = new RequestSpecBuilder();
-        builder.setBaseUri(petUrl.getUrl());
-        builder.addFormParam("name", "updatedName");
-        builder.addFormParam("status", petStatus.Pending.getStatus());
         builder.setContentType("application/json");
         requestSpec = builder.build();
     }
@@ -63,16 +53,12 @@ public class petHelper {
         Assert.assertEquals(statusResponse, expectedStatus);
     }
 
-    public void validateGetRequest(boolean isUpdated) {
+    public void validateRequest() {
         JsonPath jp = response.jsonPath();
         validateStatus(200);
         softly.assertThat((Long) jp.get("id")).as("pet id").isEqualTo(pet.get("id"));
         softly.assertThat((String) jp.get("name")).as("pet name").isEqualTo(pet.get("name"));
-        if (isUpdated) {
-            softly.assertThat((String) jp.get("status")).as("pet status").isEqualTo(petStatus.Pending.getStatus());
-        } else {
-            softly.assertThat((String) jp.get("status")).as("pet status").isEqualTo(petStatus.Available.getStatus());
-        }
+        softly.assertThat((String) jp.get("status")).as("pet status").isEqualTo(pet.get("status").toString());
         softly.assertAll();
     }
 }
